@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../theme";
 import "./globals.css";
+import Link from "next/link";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -26,6 +27,13 @@ export default function RootLayout({
     <html lang="en" className={roboto.variable}>
       <body>
         <AppRouterCacheProvider>
+          <Link href={"/about"}>About</Link>
+          <Link href={"/admin"}>Admin</Link>
+          <Link href={"/drinks"}>Drinks</Link>
+          <Link href={"/food"}>Food</Link>
+          <Link href={"/gameday"}>Gameday</Link>
+          <Link href={"/"}>Home</Link>
+          <Link href={"/specials"}>Specials</Link>
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </AppRouterCacheProvider>
       </body>
